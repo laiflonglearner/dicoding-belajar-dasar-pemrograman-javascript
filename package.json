@@ -1,0 +1,24 @@
+{
+  "name": "dicoding-belajar-dasar-pemrograman-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laiflonglearner/dicoding-belajar-dasar-pemrograman-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laiflonglearner/dicoding-belajar-dasar-pemrograman-javascript/issues"
+  },
+  "homepage": "https://github.com/laiflonglearner/dicoding-belajar-dasar-pemrograman-javascript#readme",
+  "devDependencies": {
+    "flow-bin": "^0.275.0"
+  }
+}
