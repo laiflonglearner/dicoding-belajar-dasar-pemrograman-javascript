@@ -46,7 +46,7 @@ describe("Calculator", () => {
 });
 
 /*
-    // To run this test, use the command: node --test test.mjs
+    // To run this test, use `node --test test.mjs`
     // Karena kalo langsung run dari IDE, 
     // it just executed your code like a regular script without invoking the test runner output mode.
 

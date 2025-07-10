@@ -11,7 +11,7 @@ describe("arithmetic", () => {
 });
 
 /*
-    // To run this test, use the command: bun test sample.test.mjs
+    // To run this test, use `bun test sample.test.mjs`
     Expected output:
     ✓ arithmetic > 1 + 1
     ✓ arithmetic > 3 * 2
