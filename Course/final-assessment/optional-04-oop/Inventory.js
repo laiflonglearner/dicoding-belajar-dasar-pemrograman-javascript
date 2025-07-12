@@ -1,11 +1,3 @@
-/**
- * TODO
- * Selesaikan kode pembuatan class Inventory dengan ketentuan:
- * - Memiliki properti `items` untuk menampung daftar item dalam bentuk array.
- * - Memiliki method `addItem` untuk menambahkan item ke properti `items`.
- * - Memiliki method `removeItem` untuk menghapus item berdasarkan `id`.
- * - Memiliki method `listItems` untuk mengembalikan string yang merupakan informasi detail barang (dipanggil dari fungs `item.displayDetails()`).
- */
 import Item, { ItemError } from "./Item.js";
 
 class Inventory {
@@ -14,10 +6,16 @@ class Inventory {
   }
 
   addItem(item) {
-    if (!(item instanceof Item)) {
-      throw new ItemError("Invalid Item: not an instance of Item.");
+    if (!item) return; // Prevent null from Item.create()
+
+    try {
+      if (!(item instanceof Item)) {
+        throw new ItemError("Invalid Item: not an instance of Item.");
+      }
+      this.items.push(item);
+    } catch (error) {
+      console.error("Failed to add Item:", error.message);
     }
-    this.items.push(item);
   }
 
   removeItem(id) {
@@ -29,5 +27,4 @@ class Inventory {
   }
 }
 
-// Jangan hapus kode di bawah ini!
 export default Inventory;
