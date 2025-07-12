@@ -1,15 +1,15 @@
-import Item from './Item.js';
-import Inventory from './Inventory.js';
+import Item from "./Item.js";
+import Inventory from "./Inventory.js";
 
 const inventory = new Inventory();
 
-const item1 = new Item(1, 'Laptop', 10, 1000);
-const item2 = new Item(2, 'Mouse', 50, 20);
+const item1 = new Item(1, "Laptop", 10, 1000);
+const item2 = new Item(2, "Mouse", 50, 20);
 
 inventory.addItem(item1);
 inventory.addItem(item2);
 
-console.log('Initial Inventory:');
+console.log("Initial Inventory:");
 console.log(inventory.listItems());
 /**
  * Output yang diharapkan:
@@ -18,8 +18,8 @@ console.log(inventory.listItems());
  * ID: 2, Name: Mouse, Quantity: 50, Price: 20
  */
 
-item1.updateDetails( 'Laptop', 8, 950);
-console.log('\nInventory after update:');
+item1.updateDetails("Laptop", 8, 950);
+console.log("\nInventory after update:");
 console.log(inventory.listItems());
 
 /**
@@ -30,7 +30,7 @@ console.log(inventory.listItems());
  */
 
 inventory.removeItem(2);
-console.log('\nInventory after removal:');
+console.log("\nInventory after removal:");
 console.log(inventory.listItems());
 
 /**
@@ -38,3 +38,10 @@ console.log(inventory.listItems());
  * Inventory after removal:
  * ID: 1, Name: Laptop, Quantity: 8, Price: 950
  */
+
+// Additional test cases
+inventory.addItem(new Item("Test", 10, 1000)); // This should throw invalid item error
+inventory.addItem(new Item("1", "Laptop", 10, 1000)); // This should throw ID type error
+inventory.addItem(new Item(1, " ", 10, 1000)); // This should throw name type error
+inventory.addItem(new Item(1, "Karen123", 10, 1000)); // This should throw name format error
+console.log(inventory.listItems());
