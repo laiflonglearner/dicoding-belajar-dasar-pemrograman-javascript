@@ -29,6 +29,7 @@ class Inventory {
 
   removeItem(id) {
     this.items = this.items.filter((item) => item.id !== id);
+    // Future improvement: not required in the instruction, but try to handle case where item is not found
   }
 
   listItems() {

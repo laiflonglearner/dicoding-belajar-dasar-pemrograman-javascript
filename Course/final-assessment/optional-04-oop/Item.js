@@ -9,6 +9,7 @@
  *   ```
  */
 
+// Custom error for Item-related issues.
 export class ItemError extends Error {
   constructor(message) {
     super(message);
@@ -61,6 +62,16 @@ class Item {
     }
   }
 
+  /* 
+  This static method allows creating an Item instance with validation and error handling. 
+  It ensures that the properties are valid before creating the instance.
+  Because I don't know adding try catch or error handling in `main.js` file is allowed to pass the assessment,
+  I need to find a way that creating an invalid Item will not crash the program.
+  Using `new Item` in main.js will throw an error if the properties are invalid,
+  so I create a static method `create` here in `Item.js` that handles validation and returns null if the properties
+  are invalid, so the program can continue running without crashing.
+  */
+
   static create(id, name, quantity, price) {
     try {
       this.#validate({ id, name, quantity, price });
@@ -70,6 +81,11 @@ class Item {
       return null;
     }
   }
+
+  /*
+    I learned that we shouldn't try to catch errors in the constructor,
+    because it will make the code harder to read and maintain.
+  */
 
   constructor(id, name, quantity, price) {
     // Validation should throw — prevent broken instances
