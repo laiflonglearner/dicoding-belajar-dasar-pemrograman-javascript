@@ -30,6 +30,21 @@ console.log(fibonacci(5)); // [0, 1, 1, 2, 3, 5]
     n = 1: Return [0, 1, 1, 2, 3, 5].
     For n = 0: Return [0] (base case in outer function).
     For n = 1: Return [0, 1] (base case in outer function).
+
+    The normal fibonacci function will result in: 
+    [0, 1, 1, 2, 3, 5] for n = 5, meanwhile
+    The recursive approach builds the Fibonacci sequence by appending the next number based on the last two numbers in the sequence.
+    So the result is:
+    [0]
+    [0, 1]
+    [0, 1, 1]
+    [0, 1, 1, 2]
+    [0, 1, 1, 2, 3]
+    [0, 1, 1, 2, 3, 5]
+    So the challenge was to use recursion to build the Fibonacci sequence up to n,
+    while the normal fibonacci function simply returns the Fibonacci number at position n.
+    This solution is indeed elegant but it is not the most efficient way to calculate Fibonacci numbers,
+    especially for larger n, as it builds the entire sequence up to n.
 */
 
 // Jangan hapus kode di bawah ini!
